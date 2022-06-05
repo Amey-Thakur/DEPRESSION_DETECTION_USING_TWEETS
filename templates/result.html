@@ -1,0 +1,54 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron" style="background-color:#1daeff !important;">
+        <h2 style="color:#fff;">Tweet Depression detector App</h2>
+        <p style="color:#fff;"> Using Machine Learning to Classify Tweets</p>
+    </div>
+    <p>ML App</p>
+</div>
+
+
+<div class="card text-center"> 
+    <div class="card-header">
+        Result
+    </div>
+    <div class="card-body" style="background-color: #1daeff;">
+        <h5 class="card-title">Your original tweet</h5>
+        <hr/>
+        <p class="card-text">is
+            <div class = "alert alert-danger" role="alert">
+            {{ name }}   
+            </div>
+        </p>
+     
+<!-- Main ML Prediction Display Here -->   
+        {% if prediction == 0 %}
+        <p class="card-text">
+            <div class = "alert alert-danger" role="alert">
+                This tweet is non-depressive
+            </div>
+        </p>
+        <a href="#" class="btn btn-primary">Non-depressed</a>
+        {% elif prediction == 1 %}
+        <p class="card-text">
+            <div class = "alert alert-danger" role="alert">
+                This tweet is depressive
+            </div>
+        </p>
+        <a href="#" class="btn btn-danger">Depressive</a>
+        {% endif %}
+    </div>
+    <div class="card-footer text-muted"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+        href="{{url_for('.static', filename='css/styles.css')}}">
+
+{% endblock %}
