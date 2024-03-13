@@ -53,7 +53,7 @@ We need two types of datasets one with tweets containing depressive characterist
 
 2. Random tweets has been extracted from the [Kaggle datasets](https://www.kaggle.com/ywang311/twitter-sentiment/data). 
 
-* The processed dataset used for training machine learning algorithms can be find [here](https://github.com/miladrezazadeh/twitter_depression_detection/tree/main/data/processed).
+The processed dataset used for training machine learning algorithms can be find [here](https://github.com/miladrezazadeh/twitter_depression_detection/tree/main/data/processed).
 
 
 ## Data Science Pipeline:
@@ -114,9 +114,8 @@ python train.py <file_name> <model_name>
 python predict.py <tweet.txt> SVM
 ```
 * Run the Flask Application
-
-- Start flask web server: `python app.py`
-- The server will start on the address http://127.0.0.1:5000 [if port 5000 is not occupied]
+ - Start flask web server: `python app.py`
+ - The server will start on the address http://127.0.0.1:5000 [if port 5000 is not occupied]
 
 
 ## License
