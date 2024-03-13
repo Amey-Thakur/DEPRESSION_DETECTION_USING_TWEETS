@@ -8,6 +8,7 @@
 </div>
 
 ## Table of Contents
+
 * [Overview](#Overview)
 * [Background and Motivation](#Background-and-Motivation)
 * [Goals](#Goals)
@@ -16,6 +17,7 @@
 * [Usage](#Usage)
 * [License](#License)
 * [References](#References)
+
 <!-- * [License](#license) -->
 
 ## Overview
@@ -27,6 +29,7 @@ Depression is the most common mental disorder which is more than just being sad.
 <div class="verticalcenter">
 <img src = "https://github.com/miladrezazadeh/twitter_depression_detection/blob/main/img/depression.png?raw=true" align="middle"> 
 </div>
+
 
 ## Background and Motivation
 
@@ -41,6 +44,7 @@ Depression is the most common mental disorder which is more than just being sad.
 
 The goal of this project is to implement supervised machine learning techniques in order to detect tweets containing depressive characteristics. 
 
+
 ## Datasets
 
 We need two types of datasets one with tweets containing depressive characteristic which is obtained from twitter API and the other one with random tweets.
@@ -50,6 +54,7 @@ We need two types of datasets one with tweets containing depressive characterist
 2. Random tweets has been extracted from the [Kaggle datasets](https://www.kaggle.com/ywang311/twitter-sentiment/data). 
 
 * The processed dataset used for training machine learning algorithms can be find [here](https://github.com/miladrezazadeh/twitter_depression_detection/tree/main/data/processed).
+
 
 ## Data Science Pipeline:
 
@@ -61,6 +66,7 @@ We need two types of datasets one with tweets containing depressive characterist
 * Inference : F1-Score, Confusion matrix and ROC-AUC to make an inference
 * Model Deployment : Deployment on AWS or heroku
 * Data Product : Flask-based web application
+
 
 ## Usage
 
@@ -112,9 +118,11 @@ python predict.py <tweet.txt> SVM
 - Start flask web server: `python app.py`
 - The server will start on the address http://127.0.0.1:5000 [if port 5000 is not occupied]
 
+
 ## License
 
 This repo has a MIT License.
+
 
 ## References
 
