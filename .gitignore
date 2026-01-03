@@ -1,8 +1,8 @@
-**/.DS_Store
-.*.swp
-.*.swo
-
-# Distribution / packaging
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
 .Python
 build/
 develop-eggs/
@@ -22,12 +22,34 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# Jupyter Notebook
+.ipynb_checkpoints
+
 # Environments
 .env
 .venv
 env/
-src/venv/
+venv/
 ENV/
 env.bak/
 venv.bak/
-venv/
+
+# OS Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Web
+*.db
+*.log
+instance/
+
+# Models (Optional - typically large models are not committed, but small ones might be)
+# *.pkl
+# *.h5
