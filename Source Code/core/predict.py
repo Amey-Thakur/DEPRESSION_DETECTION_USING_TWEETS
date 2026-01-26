@@ -2,13 +2,11 @@
 # PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
-# GITHUB (MEGA): https://github.com/Mega-Satish
+# GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 # RELEASE DATE: June 5, 2022
 # LICENSE: MIT License
-# DESCRIPTION: Command-line interface (CLI) driver script for performing 
-#              sentiment inference on individual tweets using a pre-trained 
-#              Support Vector Machine (SVM) and spaCy word embeddings.
+# DESCRIPTION: Utility for predicting depression levels in tweets using SVM.
 # ==============================================================================
 
 import argparse
@@ -75,8 +73,8 @@ def main():
             nlp_engine = en_core_web_lg.load()
             
             # Generating the centroid vector representing the tweet's linguistic context
-            semantic_features = pd.np.array([
-                pd.np.array([token.vector for token in nlp_engine(s)]).mean(axis=0) * pd.np.ones((300))
+            semantic_features = np.array([
+                np.array([token.vector for token in nlp_engine(s)]).mean(axis=0) * np.ones((300))
                 for s in cleaned_input
             ])
 

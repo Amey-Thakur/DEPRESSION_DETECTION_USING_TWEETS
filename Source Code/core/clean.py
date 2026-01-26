@@ -2,13 +2,11 @@
 # PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
-# GITHUB (MEGA): https://github.com/Mega-Satish
+# GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 # RELEASE DATE: June 5, 2022
 # LICENSE: MIT License
-# DESCRIPTION: Command-line interface (CLI) script for the linguistic 
-#              preprocessing of raw tweet data. Utilizes advanced NLP 
-#              techniques for data normalization and sanitation.
+# DESCRIPTION: Utility for cleaning raw tweet data for analysis.
 # ==============================================================================
 
 import argparse
@@ -28,7 +26,7 @@ def main():
     """
     # Configuration of the command-line argument parser
     parser = argparse.ArgumentParser(
-        description="Twitter Depression Detection: Linguistic Preprocessing Utility"
+        description="Twitter Depression Detection: Text Cleaning Utility"
     )
 
     # Definition of the mandatory positional argument for input file path

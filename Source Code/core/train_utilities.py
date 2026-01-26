@@ -2,13 +2,11 @@
 # PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
-# GITHUB (MEGA): https://github.com/Mega-Satish
+# GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 # RELEASE DATE: June 5, 2022
 # LICENSE: MIT License
-# DESCRIPTION: Comprehensive Machine Learning utility module containing the 
-#              pipeline for dataset preparation, feature extraction, 
-#              multi-architectural training, and model serialization.
+# DESCRIPTION: Utility module for the model training pipeline.
 # ==============================================================================
 
 import pickle

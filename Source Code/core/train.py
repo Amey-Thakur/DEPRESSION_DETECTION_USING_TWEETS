@@ -2,13 +2,11 @@
 # PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
-# GITHUB (MEGA): https://github.com/Mega-Satish
+# GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 # RELEASE DATE: June 5, 2022
 # LICENSE: MIT License
-# DESCRIPTION: Command-line interface (CLI) driver script for the 
-#              multi-model training pipeline. Supports various architectures 
-#              including SVM, Random Forest, and LSTM for sentiment analysis.
+# DESCRIPTION: Script for training machine learning models for tweet analysis.
 # ==============================================================================
 
 import argparse

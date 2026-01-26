@@ -3,62 +3,88 @@
 PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 AUTHORS: AMEY THAKUR & MEGA SATISH
 GITHUB (AMEY): https://github.com/Amey-Thakur
-GITHUB (MEGA): https://github.com/Mega-Satish
+GITHUB (MEGA): https://github.com/msatmod
 REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 RELEASE DATE: June 5, 2022
 LICENSE: MIT License
-DESCRIPTION: Analysis results secondary page displaying the model's 
-             classification outcome for the submitted tweet.
+DESCRIPTION: Result page for the tweet analysis.
 ==============================================================================
 -->
 
-{% extends "bootstrap/base.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container">
-    <div class="jumbotron" style="background-color:#1daeff !important;">
-        <h2 style="color:#fff;">Tweet Depression Detector App</h2>
-        <p style="color:#fff;"> Using Machine Learning to Classify Tweets</p>
-    </div>
-    <p>ML App</p>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result | AMEY & MEGA </title>
+    <link rel="icon" href="{{url_for('.static', filename='chart-bar.svg')}}" type="image/svg+xml">
 
-<div class="card text-center">
-    <div class="card-header">
-        Analysis Result
-    </div>
-    <div class="card-body" style="background-color: #1daeff;">
-        <h5 class="card-title">Your submitted content:</h5>
-        <hr />
-        <p class="card-text">
-        <div class="alert alert-info" role="alert" style="color: #000;">
-            {{ name }}
-        </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{url_for('.static', filename='styles.css')}}">
+    <script src="{{url_for('.static', filename='security.js')}}"></script>
+</head>
+
+<body>
+
+    <header class="hero-section container animate-fade">
+        <i class="fas fa-chart-line fa-3x" style="color: #1daeff; margin-bottom: 20px;"></i>
+        <h1>Analysis Result</h1>
+        <p>Here is what our model predicted for the tweet you provided.</p>
+    </header>
+
+    <main class="container animate-fade" style="animation-delay: 0.2s;">
+        <section class="analysis-card">
+            <h3><i class="fas fa-quote-left" style="color: var(--clr-slate); margin-right: 10px;"></i> The Tweet
+            </h3>
+            <div
+                style="background: #F8F9FA; padding: 25px; border-radius: 8px; margin: 20px 0; border-left: 4px solid var(--clr-slate);">
+                <p
+                    style="font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; color: var(--clr-navy);">
+                    {{ name }}
+                </p>
+            </div>
+        </section>
+
+        <section class="analysis-card result-display">
+            <h3>Our Prediction</h3>
+
+            {% if prediction == 0 %}
+            <div class="result-badge badge-non-depressive">
+                <i class="fas fa-check-circle"></i> Non-Depressive
+            </div>
+            <p style="margin-top: 25px; color: var(--clr-slate);">Our model didn't find any significant signs of
+                depression in this text.</p>
+            {% elif prediction == 1 %}
+            <div class="result-badge badge-depressive">
+                <i class="fas fa-exclamation-triangle"></i> Depressive
+            </div>
+            <p style="margin-top: 25px; color: var(--clr-slate);">Our model identified patterns that are often
+                associated with depression in this text.</p>
+            {% endif %}
+
+            <div style="margin-top: 40px; border-top: 1px solid #E2E8F0; padding-top: 30px;">
+                <a href="{{ url_for('index') }}" class="btn-primary">
+                    <i class="fab fa-twitter" style="margin-right: 8px;"></i> Analyze Another Tweet
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container"
+        style="padding: 60px 0 40px; text-align: center; border-top: 1px solid rgba(136, 146, 176, 0.1);">
+        <p style="color: var(--clr-slate); font-size: 0.95rem; margin-bottom: 12px;">
+            Developed by <a href="https://github.com/Amey-Thakur"
+                style="color: var(--clr-accent-dark); font-weight: 700;">Amey Thakur</a> & <a
+                href="https://github.com/msatmod" style="color: var(--clr-accent-dark); font-weight: 700;">Mega
+                Satish</a>
         </p>
-
-        <!-- Main Machine Learning Prediction Display Logic -->
-        {% if prediction == 0 %}
-        <p class="card-text">
-        <div class="alert alert-success" role="alert">
-            Outcome: Non-depressive
-        </div>
+        <p style="color: var(--clr-light-slate); font-size: 0.85rem; letter-spacing: 0.5px;">
+            © 2022 • MIT License • <a href="https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS"
+                target="_blank" style="margin-left: 5px;"><i class="fab fa-github"></i> GitHub</a>
         </p>
-        <button class="btn btn-primary" disabled>Classification: Non-depressive</button>
-        {% elif prediction == 1 %}
-        <p class="card-text">
-        <div class="alert alert-danger" role="alert">
-            Outcome: Depressive
-        </div>
-        </p>
-        <button class="btn btn-danger" disabled>Classification: Depressive</button>
-        {% endif %}
-    </div>
-    <div class="card-footer text-muted">Model utilizing SVM + spaCy word embeddings</div>
-</div>
+    </footer>
 
-{% endblock %}
+</body>
 
-{% block styles %}
-{{super()}}
-<link rel="stylesheet" href="{{url_for('.static', filename='styles.css')}}">
-{% endblock %}
+</html>

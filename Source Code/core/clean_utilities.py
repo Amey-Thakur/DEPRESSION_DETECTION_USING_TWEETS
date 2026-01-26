@@ -2,13 +2,11 @@
 # PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
-# GITHUB (MEGA): https://github.com/Mega-Satish
+# GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 # RELEASE DATE: June 5, 2022
 # LICENSE: MIT License
-# DESCRIPTION: Core Natural Language Processing (NLP) utility module 
-#              specializing in the sanitation, normalization, and 
-#              transformation of social media discourse (Tweets).
+# DESCRIPTION: Core NLP logic for cleaning and normalizing tweet text.
 # ==============================================================================
 
 import re

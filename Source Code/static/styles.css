@@ -2,16 +2,236 @@
  * PROJECT: DEPRESSION-DETECTION-USING-TWEETS
  * AUTHORS: AMEY THAKUR & MEGA SATISH
  * GITHUB (AMEY): https://github.com/Amey-Thakur
- * GITHUB (MEGA): https://github.com/Mega-Satish
+ * GITHUB (MEGA): https://github.com/msatmod
  * REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
  * RELEASE DATE: June 5, 2022
  * LICENSE: MIT License
- * DESCRIPTION: Global cascading style sheet (CSS) for the web interface, 
- *              providing consistent typography and structural padding.
+ * DESCRIPTION: Global style sheet with a professional and personal design.
  * ============================================================================== */
 
-body{
-	font:15px/1.5 Arial, Helvetica,sans-serif;
-	padding: 0px;
-	background-color:#f4f3f3;
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+:root {
+	/* Color Palette */
+	--clr-navy: #0A192F;
+	--clr-slate: #8892B0;
+	--clr-light-slate: #A8B2D1;
+	--clr-white: #E6F1FF;
+	--clr-ivory: #F8F9FA;
+	--clr-accent: #64FFDA;
+	--clr-accent-dark: #1daeff;
+	--clr-bg: #F4F7FB;
+
+	/* Typography */
+	--font-main: 'Play', sans-serif;
+
+	/* Layout */
+	--header-height: 80px;
+	--max-width: 900px;
+	--transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--clr-bg);
+	color: var(--clr-navy);
+	font-family: var(--font-main);
+	line-height: 1.6;
+	overflow-x: hidden;
+	user-select: none;
+}
+
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 40px;
+}
+
+/* Header & Typography */
+h1,
+h2,
+h3 {
+	font-family: var(--font-main);
+	color: var(--clr-navy);
+}
+
+.hero-section {
+	padding: 80px 0 40px;
+	text-align: center;
+}
+
+.hero-section h1 {
+	font-size: 3rem;
+	margin-bottom: 20px;
+	font-weight: 700;
+}
+
+.hero-section p {
+	font-size: 1.2rem;
+	color: var(--clr-slate);
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+/* Analysis Card */
+.analysis-card {
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.1);
+	padding: 40px;
+	margin-bottom: 30px;
+}
+
+.input-group {
+	margin-top: 30px;
+}
+
+textarea.analysis-input {
+	width: 100%;
+	min-height: 150px;
+	padding: 20px;
+	border: 2px solid #E2E8F0;
+	border-radius: 8px;
+	font-family: var(--font-main);
+	font-size: 1.1rem;
+	transition: var(--transition);
+	resize: vertical;
+	outline: none;
+}
+
+textarea.analysis-input:focus {
+	border-color: var(--clr-accent-dark);
+	box-shadow: 0 0 0 4px rgba(29, 174, 255, 0.1);
+}
+
+.btn-primary {
+	display: inline-block;
+	background-color: var(--clr-accent-dark);
+	color: white;
+	padding: 15px 35px;
+	border-radius: 6px;
+	font-weight: 600;
+	text-decoration: none;
+	border: 2px solid var(--clr-accent-dark);
+	cursor: pointer;
+	transition: var(--transition);
+	margin-top: 20px;
+	font-size: 1rem;
+}
+
+.btn-primary:hover {
+	background-color: white;
+	color: var(--clr-accent-dark);
+	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(29, 174, 255, 0.3);
+}
+
+/* Result Section */
+.result-display {
+	text-align: center;
+	padding: 40px 0;
+}
+
+.result-badge {
+	display: inline-block;
+	padding: 10px 25px;
+	border-radius: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 20px;
+}
+
+.badge-depressive {
+	background-color: #FFF5F5;
+	color: #C53030;
+	border: 1px solid #FEB2B2;
+}
+
+.badge-non-depressive {
+	background-color: #F0FFF4;
+	color: #276749;
+	border: 1px solid #9AE6B4;
+}
+
+/* Footer & Authorship */
+footer {
+	padding: 60px 0;
+	text-align: center;
+	border-top: 1px solid #E2E8F0;
+	margin-top: 60px;
+}
+
+.authorship {
+	color: var(--clr-slate);
+	font-size: 0.9rem;
+}
+
+.authorship a {
+	color: var(--clr-accent-dark);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.authorship a:hover {
+	text-decoration: underline;
+}
+
+.metadata {
+	margin-top: 10px;
+	font-size: 0.8rem;
+	color: var(--clr-light-slate);
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade {
+	animation: fadeIn 0.8s ease forwards;
+}
+
+/* Brain Icon Animation */
+.brain-trigger {
+	color: var(--clr-accent-dark);
+	margin-bottom: 20px;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	filter: drop-shadow(0 0 5px rgba(29, 174, 255, 0.3));
+}
+
+.brain-trigger:hover {
+	animation: brainPulse 1.5s infinite ease-in-out;
+	color: #4dc4ff;
+	/* Slightly brighter on hover */
+	filter: drop-shadow(0 0 15px rgba(29, 174, 255, 0.8));
+}
+
+@keyframes brainPulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.15);
+		filter: drop-shadow(0 0 25px rgba(29, 174, 255, 0.9));
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }

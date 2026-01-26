@@ -2,13 +2,11 @@
 # PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
-# GITHUB (MEGA): https://github.com/Mega-Satish
+# GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 # RELEASE DATE: June 5, 2022
 # LICENSE: MIT License
-# DESCRIPTION: Flask-based web application entry point for the Twitter 
-#              Depression Detection system. This script handles routing, 
-#              input collection, and serves the prediction results.
+# DESCRIPTION: Flask application entry point for the tweet analysis project.
 # ==============================================================================
 
 #!/usr/bin/env python3
@@ -25,24 +23,13 @@ Bootstrap(app)
 
 @app.route('/')
 def index():
-    """
-    Renders the primary landing page of the application.
-    
-    Returns:
-        The refined index1.html template containing the tweet input form.
-    """
-    return render_template('index1.html')
+    """Renders the landing page for tweet input."""
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
     """
-    Facilitates the inference pipeline by capturing user input, 
-    invoking the prediction logic, and rendering the results.
-    
-    Process:
-        1. Captures the 'tweet' string from the POST request form.
-        2. Routes the input to the optimized app_utilities prediction engine.
-        3. Returns the result.html template populated with the classification outcome.
+    Handles the form submission and displays the prediction result.
         
     Returns:
         Rendered result HTML with the model's prediction outcome.
@@ -57,6 +44,14 @@ def predict():
         my_prediction = app_utilities.tweet_prediction(str(input_data))
         
         return render_template("result.html", prediction=my_prediction, name=tweet)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """
+    Custom 404 error handler.
+    Renders the personalized 404 page when a resource is not found.
+    """
+    return render_template('404.html'), 404
 
 # Entry point for the Flask development server
 if __name__ == '__main__':

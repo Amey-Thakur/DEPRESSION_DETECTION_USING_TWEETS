@@ -2,13 +2,11 @@
 # PROJECT: DEPRESSION-DETECTION-USING-TWEETS
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
-# GITHUB (MEGA): https://github.com/Mega-Satish
+# GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
 # RELEASE DATE: June 5, 2022
 # LICENSE: MIT License
-# DESCRIPTION: Backend utility module providing core sentiment classification 
-#              logic for the web application, incorporating spaCy embeddings 
-#              and a pre-trained SVM model.
+# DESCRIPTION: Utility module for tweet analysis predictions.
 # ==============================================================================
 
 import sys
@@ -18,44 +16,40 @@ import numpy as np
 import pandas as pd
 import spacy
 import en_core_web_lg
-import clean_utilities as CU
-
 # Configure sys.path to permit localized module discovery within the core directory
 sys.path.append('./core')
+
+import clean_utilities as CU
 
 # Suppression of non-critical runtime warnings to maintain a clean console log
 warnings.filterwarnings("ignore")
 
 def tweet_prediction(tweet: str) -> int:
     """
-    Executes the analytical pipeline for a single tweet string to determine 
-    its depressive characteristic.
+    Takes a tweet and returns whether it's classified as depressive (1) or not (0).
     
-    The pipeline consists of:
-        1. Linguistic Cleaning: Utilizing the custom clean_utilities module.
-        2. Vectorization: Applying spaCy's 'en_core_web_lg' model for dense 
-           word embeddings (300-dimensional vectors).
-        3. Inference: Processing the resulting vector through a pre-trained 
-           Support Vector Machine (SVM) classifier.
-
+    The process:
+        1. Clean the text using our utility module.
+        2. Convert text to numbers using spaCy.
+        3. Use the trained SVM model to make a prediction.
     Args:
-        tweet (str): The raw text input captured from the user interface.
+        tweet (str): The tweet text from the user.
 
     Returns:
-        int: Binary classification result (1 for Depressive, 0 for Non-depressive).
+        int: 1 for Depressive, 0 for Non-depressive.
     """
-    # Step 1: Execute linguistic preprocessing
+    # Step 1: Clean the text
     processed_tweet = tweet
     cleaned_input = []
     cleaned_input.append(CU.tweets_cleaner(processed_tweet))
     
-    # Step 2: Load the high-fidelity English transformer model
+    # Step 2: Convert text to numbers using spaCy
     nlp_engine = en_core_web_lg.load()
     
     # Step 3: Compute centroid word embeddings
     # We calculate the mean vector of all tokens to represent the tweet's semantic context
-    semantic_vectors = pd.np.array([
-        pd.np.array([token.vector for token in nlp_engine(s)]).mean(axis=0) * pd.np.ones((300))
+    semantic_vectors = np.array([
+        np.array([token.vector for token in nlp_engine(s)]).mean(axis=0) * np.ones((300))
         for s in cleaned_input
     ])
     
