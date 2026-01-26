@@ -20,7 +20,7 @@ from sklearn.model_selection import train_test_split
 ## Feature selection
 from sklearn import feature_selection
 
-## libraraies for classification
+## libraries for classification
 from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
@@ -38,7 +38,7 @@ import en_core_web_lg
 
 ###############################################################
 
-## function to takes the file_name as an input
+## function that takes the file_name as an input
 ## then returns the separated training and testing dataset
 
 def load_prepare_split_df(filename, targets = ['label'], validation_size = 0.3, seed = 7):
@@ -160,7 +160,7 @@ def classification(X_train,Y_train, model = ""):
         return best_kNN_model
 
     elif model == "RF": ## if classification is Decision Tree
-        print("Building Random Forest Classifiers.")
+        print("Building Random Forest Classifier.")
         rf = RandomForestClassifier()
 
         ## Full Training period
@@ -179,7 +179,7 @@ def classification(X_train,Y_train, model = ""):
         return rf
 
     elif model == "NN": ## if classification is Decision Tree
-        print("Building Neural Network MLPClassifiers.")
+        print("Building Neural Network MLPClassifier.")
         mlp = MLPClassifier()
 
         ## Full Training period
@@ -212,7 +212,7 @@ def LSTM(filename):
     tokenizer.fit_on_texts(df_all['clean_text'])
     sequences = tokenizer.texts_to_sequences(df_all['clean_text'])
     X_LSTM = pad_sequences(sequences, maxlen=50)
-    nput_length = 50
+    input_length = 50
     ## Split the data into train and test
     Y_LSTM = df_all["label"]
     X_train_LSTM, X_test_LSTM, Y_train_LSTM, Y_test_LSTM = train_test_split(X_LSTM, Y_LSTM, test_size=validation_size, random_state=seed)

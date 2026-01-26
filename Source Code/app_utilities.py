@@ -1,4 +1,4 @@
-## Import requried libraries
+## Import required libraries
 import sys
 # sys.path is a list of absolute path strings
 sys.path.append('../twitter_depression_detection/src')
