@@ -14,12 +14,19 @@ As a finalized project, only the version listed below is authoritative:
 
 ## Vulnerability Reporting Protocol
 
-Reports regarding potential security vulnerabilities are acknowledged for documentation purposes. The authors, Amey Thakur & Mega Satish, prioritize the integrity of the archival record.
+In accordance with established academic and professional standards for security disclosure, security-related observations associated with this project are documented through formal scholarly channels.
+
+To document a security concern, communication is facilitated with the project curators:
+
+Curator: [Amey Thakur](https://github.com/Amey-Thakur)
+Collaborator: [Mega Satish](https://github.com/msatmod)
+Method: Reports are submitted via the repository’s [GitHub Issues](https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS/issues) interface to formally record security-related findings.
 
 Submissions include:
-  1. A precise and technically accurate description of the identified issue.
-  2. Demonstrable steps or technical evidence sufficient to contextualize the finding.
-  3. An explanation of the issue’s relevance within the defined scope of the project.
+
+- A precise and technically accurate description of the identified issue.
+- Demonstrable steps or technical evidence sufficient to contextualize the finding.
+- An explanation of the issue’s relevance within the defined scope of the project.
 
 ## Implementation Context: Depression Detection System
 
