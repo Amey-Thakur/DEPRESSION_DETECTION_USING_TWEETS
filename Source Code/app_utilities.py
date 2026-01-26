@@ -1,7 +1,7 @@
 ## Import required libraries
 import sys
 # sys.path is a list of absolute path strings
-sys.path.append('../twitter_depression_detection/src')
+sys.path.append('./core')
 
 import clean_utilities as CU
 ## for data
@@ -30,7 +30,7 @@ def tweet_prediction(tweet):
     test = pd.np.array([pd.np.array([token.vector for token in nlp(s)]).mean(axis=0) * pd.np.ones((300)) \
                         for s in clean_tweet])
     ## Load the model
-    SVM = "../twitter_depression_detection/models/model_svm1.pkl"
+    SVM = "./assets/models/model_svm1.pkl"
     with open(SVM, 'rb') as file3:
         clf = pickle.load(file3)
 

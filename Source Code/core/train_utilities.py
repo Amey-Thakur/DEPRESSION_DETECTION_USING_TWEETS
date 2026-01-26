@@ -81,7 +81,7 @@ def classification(X_train,Y_train, model = ""):
         ## Save the model
         print("Saving the model: ")
         SVM = \
-            "/Users/milad/OneDrive - Dalhousie University/Depression_Detection/twitter_depression_detection/models/model_svm_pc.pkl"
+            "../assets/models/model_svm_pc.pkl"
         with open(SVM, 'wb') as file:
             pickle.dump(clf, file)
 
@@ -101,7 +101,7 @@ def classification(X_train,Y_train, model = ""):
 
         ## Save the model
         print("Saving the model: ")
-        LogReg = ".../twitter_depression_detection/models/model_LogReg.pkl"
+        LogReg = "../assets/models/model_LogReg.pkl"
         with open(LogReg, 'wb') as file:
             pickle.dump(LR, file)
 
@@ -121,7 +121,7 @@ def classification(X_train,Y_train, model = ""):
 
         ## Save the model
         print("Saving the model: ")
-        DTC = ".../twitter_depression_detection/models/model_DTC.pkl"
+        DTC = "../assets/models/model_DTC.pkl"
         with open(DTC, 'wb') as file:
             pickle.dump(dtc, file)
 
@@ -153,7 +153,7 @@ def classification(X_train,Y_train, model = ""):
 
         ## Save the model
         print("Saving the model: ")
-        KNN = ".../twitter_depression_detection/models/model_KNN.pkl"
+        KNN = "../assets/models/model_KNN.pkl"
         with open(KNN, 'wb') as file:
             pickle.dump(best_kNN_model, file)
         ## Return the best model
@@ -171,7 +171,7 @@ def classification(X_train,Y_train, model = ""):
 
         ## Save the model
         print("Saving the model: ")
-        RF = ".../twitter_depression_detection/models/model_RF.pkl"
+        RF = "../assets/models/model_RF.pkl"
         with open(RF, 'wb') as file:
             pickle.dump(rf, file)
 
@@ -190,7 +190,7 @@ def classification(X_train,Y_train, model = ""):
 
         ## Save the model
         print("Saving the model: ")
-        NN = ".../twitter_depression_detection/models/model_NN.pkl"
+        NN = "../assets/models/model_NN.pkl"
         with open(NN, 'wb') as file:
             pickle.dump(mlp, file)
 

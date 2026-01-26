@@ -60,7 +60,7 @@ if args.filename is not None and args.model == "SVM":
 
     ## Load the model
     SVM = \
-        "/Users/milad/OneDrive - Dalhousie University/Depression_Detection/twitter_depression_detection/models/model_svm1.pkl"
+        "../assets/models/model_svm1.pkl"
     with open(SVM, 'rb') as file3:
         clf = pickle.load(file3)
         print("model==> ",clf)
