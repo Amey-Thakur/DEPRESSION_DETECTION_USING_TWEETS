@@ -50,6 +50,13 @@ Desktop.ini
 *.log
 instance/
 
-# Models (Optional - typically large models are not committed, but small ones might be)
+# Temporary Files
+*.tmp
+*.bak
+*.sav
+*.old
+~*
+
+# Models
 # *.pkl
 # *.h5

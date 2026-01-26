@@ -23,6 +23,8 @@
 *.pkl binary
 *.h5 binary
 *.sav binary
+*.mp3 binary
+*.wav binary
 # Academic/Scholarly classification
 *.md linguist-documentation
 *.ipynb linguist-documentation

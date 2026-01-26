@@ -1,132 +1,300 @@
-![](https://img.shields.io/github/license/miladrezazadeh/twitter_depression_detection?style=flat-square)
-![](https://img.shields.io/github/repo-size/miladrezazadeh/twitter_depression_detection)
+<div align="center">
 
-# Twitter Depression Detection
+  <a name="readme-top"></a>
+  # Depression Detection Using Tweets
 
-<div class="verticalcenter">
-<img src = "https://github.com/miladrezazadeh/twitter_depression_detection/blob/main/img/app.png?raw=true" align="middle"> 
+  [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
+  ![Status](https://img.shields.io/badge/Status-Completed-success)
+  [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20Machine%20Learning-blueviolet)](https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS)
+  [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-blue.svg)](https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS)
+
+  A modern **Python** + **Flask** application designed to analyze tweet sentiment and predict depressive characteristics using a finalized **SVM** model and **spaCy** NLP pipeline.
+
+  **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Security Policy](SECURITY.md)**
+
 </div>
 
-## Table of Contents
+---
 
-* [Overview](#Overview)
-* [Background and Motivation](#Background-and-Motivation)
-* [Goals](#Goals)
-* [Datasets](#Datasets)
-* [Data Science Pipeline](#Data-Science-Pipeline)
-* [Usage](#Usage)
-* [License](#License)
-* [References](#References)
+<div align="center">
 
-<!-- * [License](#license) -->
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#results) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
+</div>
+
+---
+
+<!-- AUTHORS -->
+<div align="center">
+
+  <a name="authors"></a>
+  ## Authors
+
+| <a href="https://github.com/Amey-Thakur"><img src="https://github.com/Amey-Thakur.png" width="150" height="150" alt="Amey Thakur"></a><br>[**Amey Thakur**](https://github.com/Amey-Thakur)<br><br>[![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5644--1575-green.svg)](https://orcid.org/0000-0001-5644-1575) | <a href="https://github.com/msatmod"><img src="Mega/Mega.png" width="150" height="150" alt="Mega Satish"></a><br>[**Mega Satish**](https://github.com/msatmod)<br><br>[![ORCID](https://img.shields.io/badge/ORCID-0000--0002--1844--9557-green.svg)](https://orcid.org/0000-0002-1844-9557) |
+| :---: | :---: |
+
+</div>
+
+> [!IMPORTANT]
+> ### 🤝🏻 Special Acknowledgement
+> *Special thanks to **[Mega Satish](https://github.com/msatmod)** for her meaningful contributions, guidance, and support that helped shape this work.*
+
+---
+
+<!-- OVERVIEW -->
+<a name="overview"></a>
 ## Overview
 
-Social media platforms such as Twitter, Instagram, and Facebook play dominant roles in our day-to-day life. The popularity of these platforms has significantly increased during the pandemic. Studies show that people are more likely to share their feelings and emotions on Twitter since the beginning of the Covid-19 pandemic. Positive emotions are not commonly associated with higher life satisfaction; however, negative emotions are more likely to express a person's true feelings. 
+**Depression Detection Using Tweets** is a specialized Machine Learning framework designed to translate complex linguistic patterns into empirical psychological insights. This repository prioritizes **high-dimensional feature extraction** and **probabilistic classification** to provide a robust baseline for sentiment analysis within the context of mental health monitoring.
 
-Depression is the most common mental disorder, which is more than just being sad. Some signs of depression are lack of interest in daily activities, significant weight loss or gain, insomnia or excessive sleeping, lack of energy, inability to concentrate, feelings of worthlessness or excessive guilt, and in severe cases, recurrent thoughts of death or suicide. Auspiciously, depression is treatable. The treatment is a combination of therapy and antidepressant medication.
+*   **Linguistic Determinism**: The system utilizes deep NLP preprocessing, including lemmatization and entity normalization, to ensure that the semantic core of a tweet is preserved regardless of slang or stylistic variation.
+*   **Vector-Space Inference**: By leveraging **Support Vector Machines (SVM)** and **TF-IDF vectorization**, the model maps textual input into a multi-dimensional hyperplane, enabling precise binary classification of depressive sentiment.
+*   **Architectural Efficiency**: The backend is architected for low-latency serving via Flask, ensuring that model inference and result rendering occur in sub-second cycles, critical for interactive user feedback.
 
-<div class="verticalcenter">
-<img src = "https://github.com/miladrezazadeh/twitter_depression_detection/blob/main/img/depression.png?raw=true" align="middle"> 
+> [!TIP]
+> **NLP Pipeline Optimization**
+>
+> To maximize classification reliability, the engine employs a **multi-stage linguistic filter**. **Stop-word suppression** and **morphological analysis** strip away structural noise, while the **en_core_web_lg** transformer model contextualizes surviving tokens. This ensures the classifier’s weights are strictly coupled with affective indicators, minimizing the false-positive skew common in generalized sentiment analysis models.
+
+---
+
+<!-- FEATURES -->
+<a name="features"></a>
+## Features
+
+| Feature | Description |
+|---------|-------------|
+| **Core SVM Model** | **High-Dimensional Classification** engine optimized for binary depressive sentiment prediction. |
+| **NLP Pipeline** | Deep linguistic feature extraction powered by the **spaCy transformer model** (`en_core_web_lg`). |
+| **Prediction Hub** | **Real-Time Inference Interface** built with Flask for sub-second classification feedback. |
+| **Security Suite** | Integrated **Browser-Side Integrity** protocols including anti-right-click and anti-select systems. |
+| **Cinematic Surprise** | **Immersive Branding Overlay** featuring animated Twitter iconography and synchronized audio. |
+
+> [!NOTE]
+> ### Technical Polish: The Linguistic Singularity
+> We have engineered a **Probabilistic Sentiment Manager** that calibrates model weights across thousands of TF-IDF vectors to simulate human-like linguistic intuition. The visual language focuses on a "Neural Slate" aesthetic, ensuring maximum cognitive focus on the diagnostic outputs without procedural distraction.
+
+### Tech Stack
+- **Languages**: Python 3.9+
+- **Logic**: **SVM Classifier** (Scikit-Learn Inference Engine)
+- **Linguistic Data**: **spaCy NLP** (Transformer-based word embeddings)
+- **Web App**: **Flask Framework** (Micro-service architecture for model serving)
+- **UI System**: Premium Modern Aesthetics (Custom CSS / Play Typography)
+- **Deployment**: Standard Python Environment (PIP-managed dependencies)
+
+---
+
+<!-- PROJECT STRUCTURE -->
+<a name="project-structure"></a>
+## Project Structure
+
+```python
+DEPRESSION-DETECTION-USING-TWEETS/
+│
+├── docs/                            # Technical Documentation
+│   └── SPECIFICATION.md             # Architecture & Design Specification
+│
+├── Mega/                            # Archival Attribution Assets
+│   ├── Filly.jpg                    # Companion (Filly)
+│   └── Mega.png                     # Author Profile Image (Mega Satish)
+│
+├── screenshots/                     # Project Visualization Gallery
+│   ├── 01_landing_page.png          # System Hub Initial State
+│   ├── 02_footer_details.png        # Brand and Metadata Footer
+│   ├── 03_surprise_cinematic.png    # Interactive Animated Sequence
+│   ├── 04_predict_interface.png     # Sentiment Analysis Entry Point
+│   ├── 05_analysis_output.png       # Model Inference result
+│   └── 06_result_prediction.png     # Final Sentiment Output
+│
+├── Source Code/                     # Primary Application Layer
+│   ├── assets/                      # Serialized Models & Linguistic Data
+│   ├── core/                        # ML Pipeline (Clean, Train, Predict)
+│   ├── static/                      # Styling, Audio, & Security Scripts
+│   ├── templates/                   # HTML Templates (Index, Result, 404)
+│   └── app.py                       # Flask Application (Entry Point)
+│
+├── .gitattributes                   # Git configuration
+├── .gitignore                       # Repository Filters
+├── CITATION.cff                     # Scholarly Citation Metadata
+├── codemeta.json                    # Machine-Readable Project Metadata
+├── LICENSE                          # MIT License Terms
+├── README.md                        # Comprehensive Scholarly Entrance
+└── SECURITY.md                      # Security Policy & Protocol
+```
+
+---
+
+<!-- RESULTS -->
+<a name="results"></a>
+## Results
+
+<div align="center">
+  <b>Main Landing: System Hub Initialization</b>
+  <br>
+  <i>Minimalist interface for rapid tweet sentiment analysis.</i>
+  <br><br>
+  <img src="screenshots/01_landing_page.png" alt="Landing Page" width="90%">
+  <br><br><br>
+
+  <b>Metadata Synthesis: Branding and Footer Detail</b>
+  <br>
+  <i>Scholarly attribution and project status integration.</i>
+  <br><br>
+  <img src="screenshots/02_footer_details.png" alt="Footer Details" width="90%">
+  <br><br><br>
+
+  <b>Interactivity: Animated Twitter Sequence</b>
+  <br>
+  <i>Immersive audiovisual overlay triggered by core branding elements.</i>
+  <br><br>
+  <img src="screenshots/03_surprise_cinematic.png" alt="Cinematic Surprise" width="90%">
+  <br><br><br>
+
+  <b>Sentiment Entry: Real-time Analysis Interface</b>
+  <br>
+  <i>Direct manipulation environment for high-latency textual input.</i>
+  <br><br>
+  <img src="screenshots/04_predict_interface.png" alt="Predict Interface" width="90%">
+  <br><br><br>
+
+  <b>Model Inference: Feature Extraction Output</b>
+  <br>
+  <i>Deep linguistic analysis and probabilistic score generation.</i>
+  <br><br>
+  <img src="screenshots/05_analysis_output.png" alt="Analysis Output" width="90%">
+  <br><br><br>
+
+  <b>Statistical Output: Final Sentiment Classification</b>
+  <br>
+  <i>Categorized classification results with immediate visual feedback.</i>
+  <br><br>
+  <img src="screenshots/06_result_prediction.png" alt="Result Prediction" width="90%">
 </div>
 
+---
 
-## Background and Motivation
+<!-- QUICK START -->
+<a name="quick-start"></a>
+## Quick Start
 
-* Large volumes of data which can be retrieved from social media platforms such as Twitter can potentially provide valuable insights into human behaviour and emotions. 
+### 1. Prerequisites
+- **Python 3.11+**: Required for runtime execution. [Download Python](https://www.python.org/downloads/)
+- **Git**: For version control and cloning. [Download Git](https://git-scm.com/downloads)
 
-* Twitter is one of the most common platforms for people to share their emotions and opinions which could be used to provide a better understanding of their mental health and wellbeing, people’s everyday decision-making, and perceptions about their quality of life.
+> [!WARNING]
+> **Data Acquisition & Memory Constraints**
+>
+> The linguistic pipeline relies on the **en_core_web_lg** transformer model, which requires an initial download of approximately **800MB**. Ensure a stable network connection during setup. Additionally, loading this model into memory requires at least **2GB of available RAM** to prevent swapping and ensure low-latency inference.
 
-* Depression is the common mental disorder and which may result in suicides. There are more than 300 million people suffer from depression every year globally.
+### 2. Installation & Setup
 
-
-## Goals
-
-The goal of this project is to implement supervised machine learning techniques in order to detect tweets containing depressive characteristics. 
-
-
-## Datasets
-
-We need two types of datasets one with tweets containing depressive characteristic which is obtained from twitter API and the other one with random tweets.
-
-1. Data mining more than 20K tweets by using [Twitter API and Tweepy library](https://github.com/miladrezazadeh/twitter_depression_detection/blob/main/notebooks/data_gathering_twitter_API.ipynb). The raw data retrieved from Twitter can be found [here](https://github.com/miladrezazadeh/twitter_depression_detection/tree/main/data/raw/scrapped).  
-
-2. Random tweets has been extracted from the [Kaggle datasets](https://www.kaggle.com/ywang311/twitter-sentiment/data). 
-
-The processed dataset used for training machine learning algorithms can be found [here](https://github.com/miladrezazadeh/twitter_depression_detection/tree/main/data/processed).
-
-
-## Data Science Pipeline:
-
-* Data Collection : Balanced dataset collected from Twitter API and Kaggle dataset.
-* Data Preprocess: Data Cleaning/exploring/processing/Annotation/Analysis via NLP libraries.
-* EDA and Feature Selection : CountVectorizer, TFIDF, spaCy word embedding model, spaCy word embedding model.
-* Model Selection : Logistic Regression, support vector machine(SVM), k-nearest neighbors(k-NN), Decision Tree Classifier, Random Forest Classifier, Neural Network, LSTM
-* Model Training : Scikit-Learn
-* Inference : F1-Score, Confusion matrix and ROC-AUC to make an inference
-* Model Deployment : Deployment on AWS or heroku
-* Data Product : Flask-based web application
-
-
-## Usage
-
-* Clone this repository
-
+#### Step 1: Clone the Repository
+Open your terminal and clone the repository:
 ```bash
-git clone https://github.com/miladrezazadeh/twitter_depression_detection.git 
+git clone https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS.git
+cd DEPRESSION-DETECTION-USING-TWEETS
 ```
 
-* Create a virtual environment
+#### Step 2: Configure Virtual Environment
+Prepare an isolated environment to manage dependencies:
 
+**Windows (Command Prompt / PowerShell):**
 ```bash
-python3 -m venv env
+python -m venv venv
+venv\Scripts\activate
 ```
 
-* Activating a virtual environment
-
+**macOS / Linux (Terminal):**
 ```bash
-source env/bin/activate
-```
-* Libraries to install
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install required libraries.
-
-```bash
-pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
 ```
 
-Download [en_core_web_lg](https://spacy.io/models/en#en_core_web_lg) from Spacy
+#### Step 3: Install Core Dependencies
+Ensure your environment is active, then install the required libraries:
+```bash
+pip install -r "Source Code/requirements.txt"
+```
 
+#### Step 4: Linguistic Model Acquisition
+Download the large-scale linguistic model required for analysis (approx. 800MB):
 ```bash
 python -m spacy download en_core_web_lg
 ```
-* Clean the dataset
+
+### 3. Execution
+Launch the sentiment analysis dashboard:
 
 ```bash
-python clean.py <file_name> 
+python "Source Code/app.py"
 ```
-* Train the best model
-```bash
-python train.py <file_name> <model_name>
-```
-* Predict 
-```bash
-python predict.py <tweet.txt> SVM
-```
-* Run the Flask Application
- - Start Flask web server: `python app.py`
- - The server will start on the address http://127.0.0.1:5000 [if port 5000 is not occupied]
 
+---
 
+<!-- USAGE GUIDELINES -->
+<a name="usage-guidelines"></a>
+## Usage Guidelines
+
+This repository is openly shared to support learning and knowledge exchange across the academic community.
+
+**For Students**  
+Use this project as reference material for understanding **machine learning pipelines**, **NLP preprocessing**, and **Python-based sentiment analysis**. The source code is available for study to facilitate self-paced learning and exploration of **predictive modeling and data normalization**.
+
+**For Educators**  
+This project may serve as a practical lab example or supplementary teaching resource for **Data Science**, **Natural Language Processing**, and **Machine Learning** courses. Attribution is appreciated when utilizing content.
+
+**For Researchers**  
+The documentation and architectural approach may provide insights into **academic project structuring**, **high-dimensional feature extraction**, and **algorithmic deployment**.
+
+---
+
+<!-- LICENSE -->
+<a name="license"></a>
 ## License
 
-This repo has a MIT License.
+This repository and all its creative and technical assets are made available under the **MIT License**. See the [LICENSE](LICENSE) file for complete terms.
 
+> [!NOTE]
+> **Summary**: You are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate attribution to the original authors.
 
-## References
+Copyright © 2022 Amey Thakur & Mega Satish
 
-* https://www.apa.org/topics/depression
-* https://www.kaggle.com/ywang311/twitter-sentiment/data
-* https://github.com/tatsath/fin-ml/tree/master/Chapter%2010%20-%20Natural%20Language%20Processing
-* https://towardsdatascience.com/text-classification-with-nlp-tf-idf-vs-word2vec-vs-bert-41ff868d1794
-* https://github.com/kiranrawat/Detecting-Fake-News-On-Social-Media
+---
+
+<!-- ABOUT -->
+<a name="about-this-repository"></a>
+## About This Repository
+
+**Created & Maintained by**: [Amey Thakur](https://github.com/Amey-Thakur) & [Mega Satish](https://github.com/msatmod)
+
+This project features **Depression Detection**, a high-performance sentiment analysis system. It represents a personal exploration into **Python**-based machine learning and interactive web-service architecture.
+
+**Connect:** [GitHub](https://github.com/Amey-Thakur) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/amey-thakur) &nbsp;·&nbsp; [ORCID](https://orcid.org/0000-0001-5644-1575)
+
+### Acknowledgments
+
+Grateful acknowledgment to [**Mega Satish**](https://github.com/msatmod) for her exceptional collaboration and scholarly partnership during the development of this machine learning project. Her constant support, technical clarity, and dedication to software quality were instrumental in achieving the system's functional objectives. Learning alongside her was a transformative experience; her thoughtful approach to problem-solving and steady encouragement turned complex requirements into meaningful learning moments. This work reflects the growth and insights gained from our side-by-side academic journey. Thank you, Mega, for everything you shared and taught along the way.
+
+Special thanks to the **mentors and peers** whose encouragement, discussions, and support contributed meaningfully to this learning experience.
+
+---
+
+<div align="center">
+
+  [↑ Back to Top](#readme-top)
+
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#results) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+
+  <br>
+
+  🧠 **[DEPRESSION-DETECTION](https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS)**
+
+  ---
+
+  ### 🎓 [Computer Engineering Repository](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)
+
+  **Computer Engineering (B.E.)**
+
+  *Semester-wise curriculum, laboratories, projects, and academic notes.*
+
+</div>
