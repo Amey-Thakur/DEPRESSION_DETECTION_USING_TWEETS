@@ -14,21 +14,13 @@
             "@type": "Person",
             "givenName": "Amey",
             "familyName": "Thakur",
-            "id": "https://orcid.org/0000-0001-5644-1575",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Terna Engineering College"
-            }
+            "id": "https://orcid.org/0000-0001-5644-1575"
         },
         {
             "@type": "Person",
             "givenName": "Mega",
             "familyName": "Satish",
-            "id": "https://orcid.org/0000-0002-1844-9557",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Terna Engineering College"
-            }
+            "id": "https://orcid.org/0000-0002-1844-9557"
         }
     ],
     "dateReleased": "2022-06-05",
@@ -40,7 +32,6 @@
         "Twitter",
         "Machine Learning",
         "NLP",
-        "Social Media Analytics",
-        "Terna Engineering College"
+        "Social Media Analytics"
     ]
 }
