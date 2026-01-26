@@ -1,3 +1,17 @@
+<!-- 
+==============================================================================
+PROJECT: DEPRESSION-DETECTION-USING-TWEETS
+AUTHORS: AMEY THAKUR & MEGA SATISH
+GITHUB (AMEY): https://github.com/Amey-Thakur
+GITHUB (MEGA): https://github.com/Mega-Satish
+REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
+RELEASE DATE: June 5, 2022
+LICENSE: MIT License
+DESCRIPTION: Analysis results secondary page displaying the model's 
+             classification outcome for the submitted tweet.
+==============================================================================
+-->
+
 {% extends "bootstrap/base.html" %}
 {% block content %}
 
@@ -9,45 +23,42 @@
     <p>ML App</p>
 </div>
 
-
 <div class="card text-center">
     <div class="card-header">
-        Result
+        Analysis Result
     </div>
     <div class="card-body" style="background-color: #1daeff;">
-        <h5 class="card-title">Your original tweet</h5>
+        <h5 class="card-title">Your submitted content:</h5>
         <hr />
-        <p class="card-text">is
-        <div class="alert alert-danger" role="alert">
+        <p class="card-text">
+        <div class="alert alert-info" role="alert" style="color: #000;">
             {{ name }}
         </div>
         </p>
 
-        <!-- Main ML Prediction Display Here -->
+        <!-- Main Machine Learning Prediction Display Logic -->
         {% if prediction == 0 %}
         <p class="card-text">
-        <div class="alert alert-danger" role="alert">
-            This tweet is non-depressive
+        <div class="alert alert-success" role="alert">
+            Outcome: Non-depressive
         </div>
         </p>
-        <a href="#" class="btn btn-primary">Non-depressive</a>
+        <button class="btn btn-primary" disabled>Classification: Non-depressive</button>
         {% elif prediction == 1 %}
         <p class="card-text">
         <div class="alert alert-danger" role="alert">
-            This tweet is depressive
+            Outcome: Depressive
         </div>
         </p>
-        <a href="#" class="btn btn-danger">Depressive</a>
+        <button class="btn btn-danger" disabled>Classification: Depressive</button>
         {% endif %}
     </div>
-    <div class="card-footer text-muted"></div>
-</div>
+    <div class="card-footer text-muted">Model utilizing SVM + spaCy word embeddings</div>
 </div>
 
 {% endblock %}
 
 {% block styles %}
 {{super()}}
-<link rel="stylesheet" href="{{url_for('.static', filename='css/styles.css')}}">
-
+<link rel="stylesheet" href="{{url_for('.static', filename='styles.css')}}">
 {% endblock %}

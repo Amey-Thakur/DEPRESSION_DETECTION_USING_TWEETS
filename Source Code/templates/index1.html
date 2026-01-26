@@ -1,3 +1,17 @@
+<!-- 
+==============================================================================
+PROJECT: DEPRESSION-DETECTION-USING-TWEETS
+AUTHORS: AMEY THAKUR & MEGA SATISH
+GITHUB (AMEY): https://github.com/Amey-Thakur
+GITHUB (MEGA): https://github.com/Mega-Satish
+REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
+RELEASE DATE: June 5, 2022
+LICENSE: MIT License
+DESCRIPTION: Primary user interface for inputting tweet content. Utilizes 
+             Flask-Bootstrap for a responsive and professional aesthetic.
+==============================================================================
+-->
+
 {% extends "bootstrap/base.html" %}
 {% block content %}
 
@@ -13,21 +27,19 @@
     <div class="panel panel-primary">
         <div class="panel-heading" style="background-color:#1563ff ">Depressive Tweet Detector</div>
         <div class="panel-body">
-      
-<!-- Main Input For Receiving Query to our ML -->	
-      	<form action="{{ url_for('predict')}}" method="POST">
-			<input type="text" name="tweet">
-			<button type="submit" class="btn btn-primary">Predict</button>
-		</form>
 
-<!-- Main Input For Receiving Query to our ML --> 
+            <!-- Main Input For Receiving Query to our ML -->
+            <form action="{{ url_for('predict')}}" method="POST">
+                <input type="text" name="tweet" placeholder="Enter tweet here..." style="width: 80%; padding: 10px;">
+                <button type="submit" class="btn btn-primary">Analyze Sentiment</button>
+            </form>
+
         </div>
     </div>
 </div>
 {% endblock %}
 
 {% block styles %}
-{{super()}}  <!-- Allows Javascripts and other styles to be inclusive in bootstrap -->
-<link rel="stylesheet"
-        href="{{url_for('.static', filename='css/styles.css')}}">
+{{super()}} <!-- Incorporation of Bootstrap inherited styles -->
+<link rel="stylesheet" href="{{url_for('.static', filename='styles.css')}}">
 {% endblock %}

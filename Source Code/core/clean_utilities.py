@@ -1,50 +1,29 @@
-## Name: Milad Rezazadeh
-## Description:
-## Utilities containing functions to clean tweets and save them
+# ==============================================================================
+# PROJECT: DEPRESSION-DETECTION-USING-TWEETS
+# AUTHORS: AMEY THAKUR & MEGA SATISH
+# GITHUB (AMEY): https://github.com/Amey-Thakur
+# GITHUB (MEGA): https://github.com/Mega-Satish
+# REPOSITORY: https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS
+# RELEASE DATE: June 5, 2022
+# LICENSE: MIT License
+# DESCRIPTION: Core Natural Language Processing (NLP) utility module 
+#              specializing in the sanitation, normalization, and 
+#              transformation of social media discourse (Tweets).
+# ==============================================================================
 
-###############################################################
-
-
-## Import required libraries
-
-## warnings
-import warnings
-warnings.filterwarnings("ignore")
-
-## for data
-import numpy as np
-import pandas as pd
-
-## for processing
-import nltk
 import re
+import warnings
+import nltk
 import ftfy
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
-########################################################################
+# Suppression of non-critical warnings to ensure a streamlined algorithmic log
+warnings.filterwarnings("ignore")
 
-## This section will download required items from nltk
-# import ssl
-
-# try:
-#     _create_unverified_https_context = ssl._create_unverified_context
-# except AttributeError:
-#     pass
-# else:
-#     ssl._create_default_https_context = _create_unverified_https_context
-#
-# nltk.download('stopwords')
-# nltk.download('punkt')
-# nltk.download('wordnet')
-# nltk.download('averaged_perceptron_tagger')
-
-
-#########################################################################
-
-## Cleaning functions
-## Expand Contraction
-cList = {
+# Dictionary of standard English contractions for lexical expansion
+# This facilitates uniform tokenization by resolving ambiguous shorthand
+CONTRACTIONS_LIST = {
   "ain't": "am not",
   "aren't": "are not",
   "can't": "cannot",
@@ -165,45 +144,85 @@ cList = {
   "you've": "you have"
 }
 
-c_re = re.compile('(%s)' % '|'.join(cList.keys()))
+# Pre-compiled regular expression for efficient contraction matching
+CONTRACTIONS_RE = re.compile('(%s)' % '|'.join(CONTRACTIONS_LIST.keys()))
 
-def expandContractions(text, c_re=c_re):
+def expand_contractions(text: str, contractions_re=CONTRACTIONS_RE) -> str:
+    """
+    Identifies and replaces English contractions within the input text 
+    using a predefined mapping.
+    
+    Args:
+        text (str): The raw text potentially containing contractions.
+        contractions_re: Compiled regex pattern for matching contractions.
+
+    Returns:
+        str: Expanded lexical form of the input text.
+    """
     def replace(match):
-        return cList[match.group(0)]
-    return c_re.sub(replace, text)
+        return CONTRACTIONS_LIST[match.group(0)]
+    return contractions_re.sub(replace, text)
 
+def tweets_cleaner(tweet: str) -> str:
+    """
+    Executes a comprehensive analytical pipeline for the linguistic 
+    normalization of microblogging content (Tweets).
+    
+    Analytical Methodology:
+        1. Case Normalization: Lowercasting to ensure uniformity.
+        2. Relevance Filtering: Exclusion of tweets consisting solely of URLs.
+        3. Noise Reduction: Removal of hashtags, mentions, and visual asset links.
+        4. Encoding Correction: Fixing malformed Unicode sequences (via ftfy).
+        5. Lexical Expansion: Resolution of linguistic contractions.
+        6. Punctuation Removal: Strategic elimination of non-alphanumeric noise.
+        7. Morphological Analysis: Removal of high-frequency stop words and 
+           application of WordNet-based lemmatization to reduce words to 
+           their base semantic roots.
 
-## Function to perform stepwise cleaning process
-def tweets_cleaner(tweet):
-    #cleaned_tweets = []
-    tweet = tweet.lower()  # lowercase
+    Args:
+        tweet (str): Raw input tweet captured from the platform.
 
-    # if url links then don't append to avoid news articles
-    # also check tweet length, save those > 5
-    if re.match("(\w+:\/\/\S+)", tweet) == None:
-        # remove hashtag, @mention, emoji and image URLs
+    Returns:
+        str: Sanitized and normalized string ready for vectorization.
+    """
+    # Phase 1: Case Uniformity
+    tweet = tweet.lower()
+
+    # Phase 2: Structural Relevance Check (Filtering out pure URL content)
+    if re.match("(\w+:\/\/\S+)", tweet) is None:
+        
+        # Phase 3: Targeted entity removal (Handles Twitter-specific artifacts)
         tweet = ' '.join(
-            re.sub("(@[A-Za-z0-9]+)|(\#[A-Za-z0-9]+)|(<Emoji:.*>)|(pic\.twitter\.com\/.*)", " ", tweet).split())
+            re.sub(
+                "(@[A-Za-z0-9]+)|(\#[A-Za-z0-9]+)|(<Emoji:.*>)|(pic\.twitter\.com\/.*)", 
+                " ", 
+                tweet
+            ).split()
+        )
 
-        # fix weirdly encoded texts
+        # Phase 4: Resolution of malformed character encodings
         tweet = ftfy.fix_text(tweet)
 
-        # expand contraction
-        tweet = expandContractions(tweet)
+        # Phase 5: Applied contraction expansion for token consistency
+        tweet = expand_contractions(tweet)
 
-        # remove punctuation
+        # Phase 6: Punctuation and non-essential character pruning
         tweet = ' '.join(re.sub("([^0-9A-Za-z \t])", " ", tweet).split())
 
-        # stop words and lemmatization
-        stop_words = set(stopwords.words('english'))
-        word_tokens = nltk.word_tokenize(tweet)
+        # Phase 7: Stop-word filtration and Lemmatization
+        # Methodology: Reducing inflectional forms to a common base word (Lemma)
+        stop_words_set = set(stopwords.words('english'))
+        tokens = nltk.word_tokenize(tweet)
 
-        lemmatizer = WordNetLemmatizer()
-        filtered_sentence = [lemmatizer.lemmatize(word) for word in word_tokens if not word in stop_words]
-        # back to string from list
-        tweet = ' '.join(filtered_sentence)  # join words with a space in between them
-
-        #cleaned_tweets.append(tweet)
+        lemmatizer_engine = WordNetLemmatizer()
+        filtered_lexicon = [
+            lemmatizer_engine.lemmatize(word) 
+            for word in tokens 
+            if word not in stop_words_set
+        ]
+        
+        # Phase 8: Re-assembly of the normalized semantic string
+        tweet = ' '.join(filtered_lexicon)
 
     return tweet
 
