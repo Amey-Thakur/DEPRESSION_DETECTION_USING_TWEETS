@@ -1,5 +1,4 @@
 # Standardized Git Attributes for Scholarly Archiving
-
 # Handle line endings automatically for files detected as text
 # and perform LF normalization on checkin.
 * text=auto eol=lf
@@ -20,7 +19,7 @@
 *.gif binary
 *.ico binary
 *.pdf binary
-*.pkl binary
+*.pkl filter=lfs diff=lfs merge=lfs -text
 *.h5 binary
 *.sav binary
 *.mp3 binary
@@ -28,7 +27,6 @@
 # Academic/Scholarly classification
 *.md linguist-documentation
 *.ipynb linguist-documentation
-*.pkl filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
