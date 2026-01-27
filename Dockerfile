@@ -25,7 +25,7 @@ RUN pip install "packaging<22.0" "cython<3.0"
 
 # Install project dependencies
 # Note: Path is relative to the repository root where Dockerfile resides
-COPY source_code/requirements.txt ./
+COPY "Source Code/requirements.txt" ./
 # --no-build-isolation is critical to allow our downgraded tools to handle legacy metadata
 RUN pip install --no-cache-dir --no-build-isolation -r requirements.txt
 
@@ -33,7 +33,7 @@ RUN pip install --no-cache-dir --no-build-isolation -r requirements.txt
 RUN python -m spacy download en_core_web_lg
 
 # Copy project source code
-COPY source_code/ ./
+COPY "Source Code/" ./
 
 # Hugging Face Spaces requires port 7860
 EXPOSE 7860
