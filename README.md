@@ -10,7 +10,7 @@
 
   A modern **Python** + **Flask** application designed to analyze tweet sentiment and predict depressive characteristics using a finalized **SVM** model and **spaCy** NLP pipeline.
 
-  **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Security Policy](SECURITY.md)**
+  **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Live Demo](https://huggingface.co/spaces/ameythakur/Depression-Detection-Using-Tweets)**
 
 </div>
 
@@ -287,7 +287,7 @@ Special thanks to the **mentors and peers** whose encouragement, discussions, an
 
   <br>
 
-  🧠 **[DEPRESSION-DETECTION](https://github.com/Amey-Thakur/DEPRESSION_DETECTION_USING_TWEETS)**
+  🧠 **[DEPRESSION-DETECTION](https://huggingface.co/spaces/ameythakur/Depression-Detection-Using-Tweets)**
 
   ---
 
