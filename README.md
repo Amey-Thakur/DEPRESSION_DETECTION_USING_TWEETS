@@ -5,8 +5,8 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
   ![Status](https://img.shields.io/badge/Status-Completed-success)
-  [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20Machine%20Learning-blueviolet)](https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS)
-  [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-blue.svg)](https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS)
+  [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20Machine%20Learning-blueviolet)](https://github.com/Amey-Thakur/DEPRESSION_DETECTION_USING_TWEETS)
+  [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-blue.svg)](https://github.com/Amey-Thakur/DEPRESSION_DETECTION_USING_TWEETS)
 
   A modern **Python** + **Flask** application designed to analyze tweet sentiment and predict depressive characteristics using a finalized **SVM** model and **spaCy** NLP pipeline.
 
@@ -238,13 +238,13 @@ python "Source Code/app.py"
 This repository is openly shared to support learning and knowledge exchange across the academic community.
 
 **For Students**  
-Use this project as reference material for understanding **machine learning pipelines**, **NLP preprocessing**, and **Python-based sentiment analysis**. The source code is available for study to facilitate self-paced learning and exploration of **predictive modeling and data normalization**.
+Use this project as reference material for understanding **Support Vector Machines (SVM)**, **spaCy NLP pipelines**, and **sentiment analysis within the context of mental health monitoring**. The source code is available for study to facilitate self-paced learning and exploration of **high-dimensional feature extraction and model serving via Flask**.
 
 **For Educators**  
 This project may serve as a practical lab example or supplementary teaching resource for **Data Science**, **Natural Language Processing**, and **Machine Learning** courses. Attribution is appreciated when utilizing content.
 
 **For Researchers**  
-The documentation and architectural approach may provide insights into **academic project structuring**, **high-dimensional feature extraction**, and **algorithmic deployment**.
+The documentation and architectural approach may provide insights into **academic project structuring**, **psychological linguistic modeling**, and **algorithmic deployment**.
 
 ---
 
@@ -287,7 +287,7 @@ Special thanks to the **mentors and peers** whose encouragement, discussions, an
 
   <br>
 
-  🧠 **[DEPRESSION-DETECTION](https://github.com/Amey-Thakur/DEPRESSION-DETECTION-USING-TWEETS)**
+  🧠 **[DEPRESSION-DETECTION](https://github.com/Amey-Thakur/DEPRESSION_DETECTION_USING_TWEETS)**
 
   ---
 
