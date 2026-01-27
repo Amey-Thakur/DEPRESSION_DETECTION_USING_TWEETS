@@ -55,5 +55,5 @@ def page_not_found(e):
 
 # Entry point for the Flask development server
 if __name__ == '__main__':
-    # Execution with debugging enabled for rapid developmental iteration
-    app.run(debug=True)
+    # Execution on port 7860 as required for Hugging Face Spaces
+    app.run(host='0.0.0.0', port=7860)
