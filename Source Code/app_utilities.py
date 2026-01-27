@@ -16,8 +16,11 @@ import numpy as np
 import pandas as pd
 import spacy
 import en_core_web_lg
+import os
+
 # Configure sys.path to permit localized module discovery within the core directory
-sys.path.append('./core')
+base_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(base_dir, 'core'))
 
 import clean_utilities as CU
 
@@ -49,7 +52,7 @@ except Exception as e:
     sys.exit(1)
 
 # 2. Load pre-trained SVM Classifier
-model_path = "./assets/models/model_svm1.pkl"
+model_path = os.path.join(base_dir, "assets", "models", "model_svm1.pkl")
 try:
     with open(model_path, 'rb') as model_file:
         classifier = pickle.load(model_file)
